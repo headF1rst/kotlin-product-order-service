@@ -1,5 +1,8 @@
 package com.example.kotlinproductorderservice.product
 
+import org.springframework.stereotype.Repository
+
+@Repository
 class ProductRepository {
 
     private val persistence = mutableMapOf<Long, Product>()
