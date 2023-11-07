@@ -3,6 +3,8 @@ package com.example.kotlinproductorderservice.product
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.transaction.annotation.Transactional
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -24,14 +26,16 @@ class ProductService(
         return ResponseEntity.status(HttpStatus.CREATED).build()
     }
 
-    fun findProduct(productId: Long): FindProductResponse {
+    @GetMapping("/{productId}")
+    fun findProduct(@PathVariable productId: Long): ResponseEntity<FindProductResponse> {
         val result: Product = productPort.getProduct(productId)
 
-        return FindProductResponse(
+        val response = FindProductResponse(
             productId = result.id,
             name = result.name,
             price = result.price,
             discountPolicy = result.discountPolicy
         )
+        return ResponseEntity.ok(response)
     }
 }
