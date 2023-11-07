@@ -20,8 +20,18 @@ class ProductService(
         @RequestBody request: AddProductRequest
     ): ResponseEntity<Unit> {
         val product = Product(request.name, request.price, request.discountPolicy)
-
         productPort.save(product)
         return ResponseEntity.status(HttpStatus.CREATED).build()
+    }
+
+    fun findProduct(productId: Long): FindProductResponse {
+        val result: Product = productPort.getProduct(productId)
+
+        return FindProductResponse(
+            productId = result.id,
+            name = result.name,
+            price = result.price,
+            discountPolicy = result.discountPolicy
+        )
     }
 }

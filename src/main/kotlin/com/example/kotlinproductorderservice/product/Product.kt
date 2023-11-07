@@ -9,14 +9,13 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "products")
 class Product(
-    private val name: String,
-    private val price: Int,
-    private val discountPolicy: DiscountPolicy
+    val name: String,
+    val price: Int,
+    val discountPolicy: DiscountPolicy
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private var id: Long = 0L
-
+    var id: Long = 0L
     init {
         require(name.isNotBlank()) { "상품명은 필수 입니다."}
         require(price > 0) { "상품 가격은 0보다 커야 합니다." }
