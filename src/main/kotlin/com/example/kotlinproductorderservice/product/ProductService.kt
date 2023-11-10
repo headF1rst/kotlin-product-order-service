@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -40,10 +41,14 @@ class ProductService(
         return ResponseEntity.ok(response)
     }
 
+    @PatchMapping("/{productId}")
     @Transactional
-    fun modifyProduct(productId: Long, request: ModifyProductRequest) {
+    fun modifyProduct(
+                        @PathVariable productId: Long,
+                        @RequestBody request: ModifyProductRequest): ResponseEntity<Unit> {
         val product: Product = productPort.getProduct(productId)
 
         product.update(request.name, request.price, request.discountPolicy)
+        return ResponseEntity.ok().build()
     }
 }

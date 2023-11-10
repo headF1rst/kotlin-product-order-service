@@ -15,7 +15,7 @@ class ProductServiceTest {
     fun `상품수정`() {
         productService.addProduct(ProductSteps.상품등록요청_생성())
         val productId = 1L
-        val modifyRequest = ModifyProductRequest("상품 수정", 2000, DiscountPolicy.NONE)
+        val modifyRequest = ProductSteps.상품수정요청_생성()
 
         productService.modifyProduct(productId, modifyRequest)
 

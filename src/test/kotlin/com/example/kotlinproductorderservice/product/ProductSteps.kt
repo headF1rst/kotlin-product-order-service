@@ -29,5 +29,18 @@ class ProductSteps {
                 .`when`()
                 .get("/products/{productId}", productId)
                 .then().log().all().extract()
+
+        fun 상품수정요청_생성(): ModifyProductRequest {
+            return ModifyProductRequest("상품 수정", 2000, DiscountPolicy.NONE)
+        }
+
+        fun 상품수정요청(productId: Long): ExtractableResponse<Response> =
+            RestAssured.given().log().all()
+                    .contentType(MediaType.APPLICATION_JSON_VALUE)
+                    .body(ProductSteps.상품수정요청_생성())
+                    .`when`()
+                    .patch("/products/{productId}", productId)
+                    .then()
+                    .log().all().extract()
     }
 }
