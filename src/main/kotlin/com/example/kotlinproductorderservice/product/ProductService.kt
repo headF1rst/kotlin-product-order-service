@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.lang.UnsupportedOperationException
 
 @RestController
 @RequestMapping("/products")
@@ -37,5 +38,12 @@ class ProductService(
             discountPolicy = result.discountPolicy
         )
         return ResponseEntity.ok(response)
+    }
+
+
+    fun modifyProduct(productId: Long, request: ModifyProductRequest) {
+        val product: Product = productPort.getProduct(productId)
+
+        product.update(request.name, request.price, request.discountPolicy)
     }
 }

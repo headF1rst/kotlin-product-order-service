@@ -23,5 +23,11 @@ class ProductSteps {
             val discountPolicy = DiscountPolicy.NONE
             return AddProductRequest(name, price, discountPolicy)
         }
+
+        fun 상품조회요청(productId: Long): ExtractableResponse<Response> =
+            RestAssured.given().log().all()
+                .`when`()
+                .get("/products/{productId}", productId)
+                .then().log().all().extract()
     }
 }

@@ -27,10 +27,7 @@ class ProductApiTest: ApiTest() {
         val productId = 1L
 
         // when
-        val response = RestAssured.given().log().all()
-            .`when`()
-            .get("/products/{productId}", productId)
-            .then().log().all().extract()
+        val response = ProductSteps.상품조회요청(productId)
 
         response.statusCode() shouldBe HttpStatus.OK.value()
         response.jsonPath().getString("name") shouldBe "상품명"
