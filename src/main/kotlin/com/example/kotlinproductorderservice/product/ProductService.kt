@@ -40,7 +40,7 @@ class ProductService(
         return ResponseEntity.ok(response)
     }
 
-
+    @Transactional
     fun modifyProduct(productId: Long, request: ModifyProductRequest) {
         val product: Product = productPort.getProduct(productId)
 
