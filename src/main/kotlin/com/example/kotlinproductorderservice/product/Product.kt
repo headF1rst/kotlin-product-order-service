@@ -29,4 +29,8 @@ class Product(
         this.price = price
         this.discountPolicy = discountPolicy
     }
+
+    fun getDiscountPrice(): Int {
+        return discountPolicy.applyDiscount(price)
+    }
 }

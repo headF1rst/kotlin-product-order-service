@@ -27,4 +27,8 @@ class Order(
     fun assignId(id: Long) {
         this.id = id
     }
+
+    fun getTotalPrice(): Int {
+        return product.getDiscountPrice() * quantity
+    }
 }
