@@ -1,7 +1,8 @@
 package com.example.kotlinproductorderservice.order
 
-import com.example.kotlinproductorderservice.product.DiscountPolicy
-import com.example.kotlinproductorderservice.product.Product
+import com.example.kotlinproductorderservice.order.domain.Order
+import com.example.kotlinproductorderservice.product.domain.DiscountPolicy
+import com.example.kotlinproductorderservice.product.domain.Product
 import io.kotest.matchers.comparables.shouldBeEqualComparingTo
 import org.junit.jupiter.api.Test
 

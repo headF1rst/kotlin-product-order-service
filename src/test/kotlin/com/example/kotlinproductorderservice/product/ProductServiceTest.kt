@@ -1,5 +1,6 @@
 package com.example.kotlinproductorderservice.product
 
+import com.example.kotlinproductorderservice.product.application.service.ProductService
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

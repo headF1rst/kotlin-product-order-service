@@ -1,7 +1,9 @@
-package com.example.kotlinproductorderservice.order
+package com.example.kotlinproductorderservice.order.adapter
 
-import com.example.kotlinproductorderservice.product.Product
-import com.example.kotlinproductorderservice.product.ProductRepository
+import com.example.kotlinproductorderservice.order.domain.Order
+import com.example.kotlinproductorderservice.order.application.port.OrderPort
+import com.example.kotlinproductorderservice.product.adapter.ProductRepository
+import com.example.kotlinproductorderservice.product.domain.Product
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Component
 

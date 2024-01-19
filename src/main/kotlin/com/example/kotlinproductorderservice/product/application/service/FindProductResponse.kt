@@ -1,4 +1,6 @@
-package com.example.kotlinproductorderservice.product
+package com.example.kotlinproductorderservice.product.application.service
+
+import com.example.kotlinproductorderservice.product.domain.DiscountPolicy
 
 data class FindProductResponse(
     val productId: Long,

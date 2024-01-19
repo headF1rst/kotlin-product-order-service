@@ -1,4 +1,4 @@
-package com.example.kotlinproductorderservice.product
+package com.example.kotlinproductorderservice.product.domain
 
 enum class DiscountPolicy {
     NONE {

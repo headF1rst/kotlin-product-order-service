@@ -1,7 +1,7 @@
 package com.example.kotlinproductorderservice.order
 
 import com.example.kotlinproductorderservice.ApiTest
-import com.example.kotlinproductorderservice.product.ProductService
+import com.example.kotlinproductorderservice.product.application.service.ProductService
 import com.example.kotlinproductorderservice.product.ProductSteps
 import io.restassured.RestAssured
 import io.restassured.response.ExtractableResponse

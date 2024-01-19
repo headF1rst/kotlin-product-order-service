@@ -1,6 +1,7 @@
 package com.example.kotlinproductorderservice.product
 
 import com.example.kotlinproductorderservice.ApiTest
+import com.example.kotlinproductorderservice.product.adapter.ProductRepository
 import io.kotest.matchers.shouldBe
 import io.restassured.RestAssured
 import io.restassured.response.ExtractableResponse

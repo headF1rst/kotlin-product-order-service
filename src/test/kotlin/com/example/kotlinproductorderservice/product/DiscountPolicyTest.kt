@@ -1,5 +1,6 @@
 package com.example.kotlinproductorderservice.product
 
+import com.example.kotlinproductorderservice.product.domain.DiscountPolicy
 import io.kotest.matchers.comparables.shouldBeEqualComparingTo
 import io.kotest.matchers.ints.shouldBeExactly
 import io.kotest.matchers.shouldBe

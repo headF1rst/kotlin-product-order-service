@@ -1,6 +1,6 @@
-package com.example.kotlinproductorderservice.order
+package com.example.kotlinproductorderservice.order.domain
 
-import com.example.kotlinproductorderservice.product.Product
+import com.example.kotlinproductorderservice.product.domain.Product
 import jakarta.persistence.*
 import lombok.AccessLevel
 import lombok.Getter

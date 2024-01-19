@@ -1,4 +1,4 @@
-package com.example.kotlinproductorderservice.order
+package com.example.kotlinproductorderservice.order.application.service
 
 data class CreateOrderRequest(
     val productId: Long,

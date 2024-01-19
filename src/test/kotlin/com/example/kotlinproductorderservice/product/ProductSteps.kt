@@ -1,5 +1,8 @@
 package com.example.kotlinproductorderservice.product
 
+import com.example.kotlinproductorderservice.product.application.service.AddProductRequest
+import com.example.kotlinproductorderservice.product.application.service.ModifyProductRequest
+import com.example.kotlinproductorderservice.product.domain.DiscountPolicy
 import io.restassured.RestAssured
 import io.restassured.response.ExtractableResponse
 import io.restassured.response.Response
