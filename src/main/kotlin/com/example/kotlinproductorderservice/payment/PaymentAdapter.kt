@@ -3,7 +3,9 @@ package com.example.kotlinproductorderservice.payment
 import com.example.kotlinproductorderservice.order.Order
 import com.example.kotlinproductorderservice.product.DiscountPolicy
 import com.example.kotlinproductorderservice.product.Product
+import org.springframework.stereotype.Component
 
+@Component
 class PaymentAdapter(
     val paymentGateway: PaymentGateway,
     val paymentRepository: PaymentRepository,

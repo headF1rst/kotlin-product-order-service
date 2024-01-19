@@ -1,5 +1,8 @@
 package com.example.kotlinproductorderservice.payment
 
+import org.springframework.stereotype.Repository
+
+@Repository
 class PaymentRepository {
 
     private val persistence = HashMap<Long, Payment>()

@@ -1,5 +1,8 @@
 package com.example.kotlinproductorderservice.payment
 
+import org.springframework.stereotype.Service
+
+@Service
 class PaymentService(
     val paymentPort: PaymentPort,
 ) {
